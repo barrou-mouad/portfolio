@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1120">
+  <meta name="description"
+    content="Portfolio de Mouad Barrou, ingénieur Full Stack spécialisé en Java, Spring Boot, Angular et Support N3.">
+  <title>Mouad Barrou — Ingénieur Full Stack</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1120;
+      --surface: #121c30;
+      --text: #edf2ff;
+      --muted: #adbbd3;
+      --accent: #67e8c5;
+      --border: #29364d;
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    a:hover { color: var(--accent); }
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+      border-radius: 4px;
+    }
+    .container { width: min(1100px, 90%); margin-inline: auto; }
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--accent);
+      color: var(--bg);
+      padding: 10px;
+      z-index: 10;
+    }
+    .skip-link:focus { top: 10px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #0b1120f5;
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .logo span, .accent { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .9rem;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    section { padding-block: 64px; }
+    .hero {
+      min-height: 75vh;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      align-items: center;
+      gap: 48px;
+      padding-block: 90px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 {
+      margin: 18px 0;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      letter-spacing: -.05em;
+    }
+    h2 {
+      margin: 0 0 28px;
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      letter-spacing: -.03em;
+    }
+    h3 { margin-top: 0; font-size: 1.15rem; }
+    p { color: var(--muted); }
+    .subtitle { color: var(--text); font-size: 1.25rem; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+    }
+    .button:hover { border-color: var(--accent); }
+    .card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+    }
+    .profile-card {
+      background: linear-gradient(145deg, #17303d, var(--surface));
+    }
+    .monogram {
+      width: 80px;
+      height: 80px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--accent);
+      border-radius: 22px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .tag {
+      padding: 5px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: .8rem;
+    }
+    .experience {
+      padding-left: 24px;
+      border-left: 2px solid var(--border);
+      margin-bottom: 36px;
+    }
+    .meta {
+      color: var(--accent);
+      font-size: .9rem;
+      margin-bottom: 10px;
+    }
+    li { color: var(--muted); margin-bottom: 7px; }
+    ul { padding-left: 20px; }
+    .education article + article {
+      border-top: 1px solid var(--border);
+      margin-top: 22px;
+      padding-top: 22px;
+    }
+    .contact { text-align: center; }
+    .contact .actions { justify-content: center; }
+    .contact p { max-width: 620px; margin-inline: auto; }
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      nav { padding-block: 16px; align-items: flex-start; }
+      .nav-links { justify-content: flex-end; gap: 10px 16px; }
+      .hero, .grid { grid-template-columns: 1fr; }
+      .hero { padding-block: 54px; gap: 30px; }
+      section { padding-block: 42px; }
+      .card { padding: 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header>
+    <nav class="container" aria-label="Navigation principale">
+      <a class="logo" href="#accueil" aria-label="Mouad Barrou — Accueil">
+        MB<span>.</span>
+      </a>
+      <div class="nav-links">
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Expérience</a>
+        <a href="#projets">Projets</a>
+        <a href="#formation">Formation</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenu" class="container">
+    <section class="hero" id="accueil" aria-labelledby="titre">
+      <div>
+        <div class="eyebrow">Ingénieur Full Stack · Support N3</div>
+        <h1 id="titre">Mouad<br><span class="accent">Barrou.</span></h1>
+        <p class="subtitle">
+          Concevoir, développer et fiabiliser des applications métier.
+        </p>
+        <p>
+          Ingénieur d’État avec plus de 3 ans d’expérience, spécialisé
+          en Java / Spring Boot et Angular. J’interviens sur l’ensemble
+          du cycle de vie logiciel : architectures microservices,
+          nouvelles fonctionnalités et résolution d’incidents critiques
+          en production.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#projets">Découvrir mes projets</a>
+          <a class="button" href="mailto:m.barrou99@gmail.com">Me contacter</a>
+        </div>
+      </div>
+
+      <aside class="card profile-card" aria-label="Profil en bref">
+        <div class="monogram" aria-hidden="true">MB</div>
+        <h2>Du code à la production.</h2>
+        <p>
+          Développement Full Stack, diagnostic applicatif et amélioration
+          continue dans des environnements Agile SAFe.
+        </p>
+        <p><strong>Localisation :</strong> Tanger, Maroc</p>
+        <p><strong>Domaines :</strong> signature électronique, TMA, microservices</p>
+        <div class="tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Angular</span>
+          <span class="tag">Support N3</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="expertise" aria-labelledby="expertise-titre">
+      <div class="eyebrow">Compétences</div>
+      <h2 id="expertise-titre">Une expertise de bout en bout.</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Développement</h3>
+          <p>Java, Python, JavaScript, TypeScript</p>
+          <p>Spring Boot, Angular, Flask, Laravel</p>
+        </article>
+        <article class="card">
+          <h3>Données & outils</h3>
+          <p>PostgreSQL, MySQL, MongoDB</p>
+          <p>Git, Docker, Kibana / ELK, Jira, Power BI, Jupyter Notebook</p>
+        </article>
+        <article class="card">
+          <h3>Architecture & méthodes</h3>
+          <p>Microservices, API REST, UML, MERISE, BPMN</p>
+          <p>Scrum, SAFe, Kanban · Conformité : RGPD, eIDAS</p>
+        </article>
+        <article class="card">
+          <h3>Collaboration & langues</h3>
+          <p>
+            Autonomie, esprit analytique, travail en équipe, gestion du temps
+            et apprentissage continu.
+          </p>
+          <p>Arabe : langue maternelle · Français : C1 · Anglais : B2</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-titre">
+      <div class="eyebrow">Parcours professionnel</div>
+      <h2 id="experience-titre">Développer. Diagnostiquer. Améliorer.</h2>
+
+      <article class="experience">
+        <div class="meta">Septembre 2023 — Aujourd’hui · Casablanca, Maroc</div>
+        <h3>Ingénieur Full Stack — Docaposte</h3>
+        <ul>
+          <li>
+            Conception et développement d’évolutions et de nouvelles
+            fonctionnalités dans le domaine de la signature électronique.
+          </li>
+          <li>
+            Résolution d’anomalies et d’incidents critiques en production,
+            avec analyse approfondie des journaux applicatifs via Kibana.
+          </li>
+          <li>
+            Participation aux planifications, estimations et démonstrations
+            aux équipes de test et de design dans un cadre Agile SAFe.
+          </li>
+          <li>Support aux utilisateurs et traitement de leurs demandes.</li>
+          <li>
+            Utilisation de GitHub Copilot dans le respect de la confidentialité
+            des données et des bonnes pratiques du projet.
+          </li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Angular</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Kibana</span>
+          <span class="tag">TMA</span>
+        </div>
+      </article>
+
+      <article class="experience">
+        <div class="meta">Mars — Août 2023 · Casablanca, Maroc</div>
+        <h3>Stage de fin d’études · Ingénieur Full Stack — Docaposte</h3>
+        <ul>
+          <li>Développement d’évolutions et de nouvelles fonctionnalités.</li>
+          <li>Intégration d’interfaces à partir de maquettes Figma.</li>
+          <li>Participation aux réunions de planification et d’estimation.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Angular</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Webhooks</span>
+          <span class="tag">SAFe / Kanban</span>
+        </div>
+      </article>
+
+      <article class="experience">
+        <div class="meta">Juillet — Septembre 2021 · Tanger, Maroc</div>
+        <h3>Stage de fin d’année · Développeur web — FST Tanger</h3>
+        <ul>
+          <li>Analyse et conception d’une application e-commerce.</li>
+          <li>Développement du backend avec Laravel et MySQL.</li>
+          <li>Intégration des paiements PayPal et sécurisation via SSL.</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Laravel</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">UML</span>
+          <span class="tag">PayPal</span>
+        </div>
+      </article>
+    </section>
+
+    <section id="projets" aria-labelledby="projets-titre">
+      <div class="eyebrow">Réalisations</div>
+      <h2 id="projets-titre">Une sélection de projets.</h2>
+
+      <div class="grid">
+        <article class="card">
+          <div class="eyebrow">Gestion académique</div>
+          <h3>Gestion des étudiants du cycle ingénieur LSI</h3>
+          <p>
+            Application web de gestion des étudiants, des inscriptions,
+            des parcours académiques et des emplois du temps.
+          </p>
+          <p>
+            Architecture REST, backend Laravel, frontend Vue.js
+            et base de données MySQL.
+          </p>
+          <div class="tags">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">API REST</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="eyebrow">Blockchain & microservices</div>
+          <h3>Gestion décentralisée des contrats immobiliers</h3>
+          <p>
+            Application web décentralisée pour gérer les contrats d’achat
+            et de vente de biens immobiliers.
+          </p>
+          <p>
+            Architecture microservices consommée par une application
+            SPA/PWA, avec une infrastructure blockchain Ethereum.
+          </p>
+          <div class="tags">
+            <span class="tag">Ethereum</span>
+            <span class="tag">Ganache</span>
+            <span class="tag">Truffle</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Angular</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="formation" aria-labelledby="formation-titre">
+      <div class="eyebrow">Formation</div>
+      <h2 id="formation-titre">Un socle d’ingénierie.</h2>
+
+      <div class="card education">
+        <article>
+          <div class="meta">2020 — 2023</div>
+          <h3>Diplôme d’ingénieur d’État</h3>
+          <p>
+            Logiciels et systèmes intelligents<br>
+            Faculté des sciences et techniques de Tanger
+          </p>
+        </article>
+        <article>
+          <div class="meta">2018 — 2020</div>
+          <h3>Diplôme d’études universitaires en sciences et techniques</h3>
+          <p>
+            Mathématique, informatique, physique et chimie<br>
+            Faculté des sciences et techniques de Tanger
+          </p>
+        </article>
+        <article>
+          <div class="meta">Juin 2018</div>
+          <h3>Baccalauréat — Sciences physiques</h3>
+          <p>Lycée qualifiant Abi Bakr Errazi, Tanger</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-titre">
+      <div class="eyebrow">Contact</div>
+      <h2 id="contact-titre">Échangeons sur vos défis techniques.</h2>
+      <p>
+        Un projet Full Stack, une problématique de production
+        ou une opportunité professionnelle ? Contactez-moi.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="mailto:m.barrou99@gmail.com">
+          m.barrou99@gmail.com
+        </a>
+        <a class="button" href="tel:+212681197028">+212 681 197028</a>
+      </div>
+      <div class="actions">
+        <a href="https://www.linkedin.com/in/mouad-barrou/">LinkedIn</a>
+        <a href="https://github.com/barrou-mouad">GitHub</a>
+      </div>
+      <p>En dehors du code : compétitions, voyages et course à pied.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Mouad Barrou · Ingénieur Full Stack · Tanger, Maroc</div>
+  </footer>
+</body>
+</html>
