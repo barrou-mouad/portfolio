@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio de Mouad Barrou - Ingénieur Full Stack" />
+  <title>Mouad Barrou — Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Mouad<span>.</span></div>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#about" data-i18n="navAbout"></a>
+          <a href="#skills" data-i18n="navSkills"></a>
+          <a href="#experience" data-i18n="navExperience"></a>
+          <a href="#projects" data-i18n="navProjects"></a>
+          <a href="#education" data-i18n="navEducation"></a>
+          <a href="#contact" data-i18n="navContact"></a>
+        </nav>
+
+        <div class="lang-switch" aria-label="Language selector">
+          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <a class="lang-home" href="index.html" title="Choisir la langue">🌐</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="about">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow" data-i18n="heroEyebrow"></div>
+          <h1 data-i18n="heroTitle"></h1>
+          <p class="lead" data-i18n="heroLead"></p>
+          <p data-i18n="heroDescription"></p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" data-i18n="heroProjectsBtn"></a>
+            <a href="mailto:m.barrou99@gmail.com" class="btn btn-secondary" data-i18n="heroContactBtn"></a>
+          </div>
+        </div>
+
+        <aside class="card profile-box">
+          <div class="name-badge">MB</div>
+          <h2 data-i18n="profileTitle"></h2>
+          <p data-i18n="profileText"></p>
+
+          <ul class="meta-list">
+            <li><strong data-i18n="locationLabel"></strong> Tanger, Maroc</li>
+            <li><strong data-i18n="emailLabel"></strong> m.barrou99@gmail.com</li>
+            <li><strong data-i18n="phoneLabel"></strong> +212 681 197028</li>
+            <li><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/mouad-barrou/" target="_blank">mouad-barrou</a></li>
+            <li><strong>GitHub :</strong> <a href="https://github.com/barrou-mouad" target="_blank">barrou-mouad</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section container" id="skills">
+      <div class="section-title">
+        <div class="eyebrow" data-i18n="skillsEyebrow"></div>
+        <h2 data-i18n="skillsTitle"></h2>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3 data-i18n="skillsTechTitle"></h3>
+          <p data-i18n="skillsTechText"></p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Angular</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Git</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="skillsMethodsTitle"></h3>
+          <p data-i18n="skillsMethodsText"></p>
+          <div class="tags">
+            <span class="tag">Scrum</span>
+            <span class="tag">SAFe</span>
+            <span class="tag">UML</span>
+            <span class="tag">BPMN</span>
+            <span class="tag">RGPD</span>
+            <span class="tag">Kibana</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="skillsSoftTitle"></h3>
+          <p data-i18n="skillsSoftText"></p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="skillsLanguagesTitle"></h3>
+          <p data-i18n="skillsLanguagesText"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="experience">
+      <div class="section-title">
+        <div class="eyebrow" data-i18n="experienceEyebrow"></div>
+        <h2 data-i18n="experienceTitle"></h2>
+      </div>
+
+      <div class="timeline">
+        <article class="card timeline-item">
+          <div class="period" data-i18n="exp1Period"></div>
+          <h3 data-i18n="exp1Title"></h3>
+          <ul>
+            <li data-i18n="exp1Item1"></li>
+            <li data-i18n="exp1Item2"></li>
+            <li data-i18n="exp1Item3"></li>
+            <li data-i18n="exp1Item4"></li>
+            <li data-i18n="exp1Item5"></li>
+          </ul>
+        </article>
+
+        <article class="card timeline-item">
+          <div class="period" data-i18n="exp2Period"></div>
+          <h3 data-i18n="exp2Title"></h3>
+          <ul>
+            <li data-i18n="exp2Item1"></li>
+            <li data-i18n="exp2Item2"></li>
+            <li data-i18n="exp2Item3"></li>
+          </ul>
+        </article>
+
+        <article class="card timeline-item">
+          <div class="period" data-i18n="exp3Period"></div>
+          <h3 data-i18n="exp3Title"></h3>
+          <ul>
+            <li data-i18n="exp3Item1"></li>
+            <li data-i18n="exp3Item2"></li>
+            <li data-i18n="exp3Item3"></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="projects">
+      <div class="section-title">
+        <div class="eyebrow" data-i18n="projectsEyebrow"></div>
+        <h2 data-i18n="projectsTitle"></h2>
+      </div>
+
+      <div class="grid-2">
+        <article class="card project-card">
+          <h3 data-i18n="project1Title"></h3>
+          <p data-i18n="project1Text"></p>
+          <div class="tags">
+            <span class="tag">Laravel</span>
+            <span class="tag">Vue.js</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">REST API</span>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <h3 data-i18n="project2Title"></h3>
+          <p data-i18n="project2Text"></p>
+          <div class="tags">
+            <span class="tag">Ethereum</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Angular</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="education">
+      <div class="section-title">
+        <div class="eyebrow" data-i18n="educationEyebrow"></div>
+        <h2 data-i18n="educationTitle"></h2>
+      </div>
+
+      <div class="timeline">
+        <article class="card timeline-item">
+          <div class="period">2020 — 2023</div>
+          <h3 data-i18n="edu1Title"></h3>
+          <p data-i18n="edu1Text"></p>
+        </article>
+
+        <article class="card timeline-item">
+          <div class="period">2018 — 2020</div>
+          <h3 data-i18n="edu2Title"></h3>
+          <p data-i18n="edu2Text"></p>
+        </article>
+
+        <article class="card timeline-item">
+          <div class="period">Juin 2018</div>
+          <h3 data-i18n="edu3Title"></h3>
+          <p data-i18n="edu3Text"></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="contact">
+      <div class="card contact-box">
+        <div class="eyebrow" data-i18n="contactEyebrow"></div>
+        <h2 data-i18n="contactTitle"></h2>
+        <p data-i18n="contactText"></p>
+
+        <div class="contact-links">
+          <a class="btn btn-primary" href="mailto:m.barrou99@gmail.com">m.barrou99@gmail.com</a>
+          <a class="btn btn-secondary" href="tel:+212681197028">+212 681 197028</a>
+          <a class="btn btn-secondary" href="https://github.com/barrou-mouad" target="_blank">GitHub</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/mouad-barrou/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" data-i18n="footerText"></div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
